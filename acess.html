@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting</title>
+</head>
+<body>
+    <form onsubmit="return fun1()">
+        <label for="un">Username:</label>
+        <input type="text" id="un">
+        <br>
+        <label for="pass">Password:</label>
+        <input type="password" id="pass">
+        <button type="submit" >Login</button>
+    </form>
+
+    <script>
+        function fun1() {
+            const us = document.getElementById("un").value;
+            const pass = document.getElementById("pass").value;
+            if (us === "2300033180" && pass === "admin") {
+                window.location.replace("http://127.0.0.1:5500/page.html");
+                return false; // Prevents form submission
+            } else {
+                alert("Incorrect username or password.");
+                return false; // Prevents form submission
+            }
+        }
+    </script>
+</body>
+</html>
